@@ -46,13 +46,15 @@ public class ManipuladorPalavras {
 
         for (i = 0; i < listaPalavras.length; i++) {
             try {
-
+                newArray.add(i, "");
+                //inicialiar o array na posição atual para poder fazer a comparação logo a baixo
+                
                 boolean acho = false;
 
                 if (listaPalavras[i] != null) {
 
                     for (j = 0; j < listaPalavras.length; j++) {
-                        newArray.add("");
+                        
                         if (listaPalavras[i].equals(listaPalavras[j])) {
 
                             l = 0;
@@ -62,7 +64,7 @@ public class ManipuladorPalavras {
                                 if (!newArray.get(j).equals(novaListaPalavras[l]) && acho == false) {
 
                                     //novaListaPalavras[j] = listaPalavras[j];
-                                    newArray.add(listaPalavras[j]);
+                                    newArray.add( j ,listaPalavras[j]);
 
                                     acho = true;
 

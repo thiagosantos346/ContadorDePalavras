@@ -24,7 +24,7 @@ public class ManipuladorPalavras {
     public void run(String[] param) {
 
         formulario.clear();
-        SelecionarPalavras run = new SelecionarPalavras();
+
         int t = param.length;
         int i, j, l;
         String[] listaPalavras = param;
@@ -35,8 +35,60 @@ public class ManipuladorPalavras {
 
         Integer[] quantidadeItemPalvra = new Integer[t];
 
-        newArray = run.runN(param);
-        
+        //ArrayList<String> tabela = new ArrayList();
+        //ArrayList<String> quantidade = new ArrayList();
+
+        for (int r = 0; r < t; r++) {
+
+            quantidadeItemPalvra[r] = 0;
+            //inicialisando os itens do vetor;
+
+        }
+
+        for (i = 0; i < (listaPalavras.length - 1); i++) {
+
+            try {
+
+                newArray.add(i, "");
+                //inicialiar o array na posição atual para poder fazer a comparação logo a baixo
+                
+                boolean acho = false;
+
+                //if (listaPalavras[i] != null) {
+
+                    for (j = 0; j < listaPalavras.length; j++) {
+                        
+                        if (listaPalavras[i].equals(listaPalavras[j])) {
+
+                            l = 0;
+
+                            //while ((l < listaPalavras.length) && (acho == false)) {
+
+                                if (!newArray.get(i).equals(novaListaPalavras[j]) && acho == false) {
+
+                                    //novaListaPalavras[j] = listaPalavras[j];
+                                    
+                                    newArray.add( i ,listaPalavras[j]);
+
+                                    acho = true;
+
+                                }
+
+                                l++;
+
+                            //}
+                        }
+
+                    }
+
+                //}
+            } catch (NullPointerException e) {
+
+                System.out.println(e.getMessage() + ": Line 75\n " + e.getLocalizedMessage());
+
+            }
+        }
+
         for (int a = 0; a < newArray.size(); a++) {
             int add = 0;
             for (int b = 0; b < listaPalavras.length; b++) {

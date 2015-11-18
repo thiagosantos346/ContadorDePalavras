@@ -12,6 +12,7 @@ import java.util.ArrayList;
  *
  * @author thiag
  */
+
 public class ManipuladorPalavras {
 
     private Modelo formulario = new Modelo();

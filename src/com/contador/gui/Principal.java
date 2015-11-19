@@ -274,7 +274,8 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-
+        
+        this.jProgressBar1.setValue(0);
         setLocation = fileExtention.search();
         txtFieldFile.setText(setLocation);
         
@@ -282,7 +283,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnProcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessarActionPerformed
-
+        
+        this.jProgressBar1.setValue(0);
         
         
         if (txtFieldFile.getText().compareTo("") != 0) {
@@ -381,7 +383,8 @@ public class Principal extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Sem aquivos selecionados");
         }
-
+        
+        this.jProgressBar1.setValue(100);
 
     }//GEN-LAST:event_btnProcessarActionPerformed
 

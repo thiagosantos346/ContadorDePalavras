@@ -24,10 +24,10 @@ public class FileHandle {
     private Path pathFile;
     private Charset charset;
 
-    private int numberLines;
-    private int numberWords;
-    public int numberChars;
-    private int preSize;
+    private int numberLines = 0;
+    private int numberWords = 0;
+    public int numberChars = 0;
+    private int preSize = 0;
 
     private ArrayList<String> wordList = new ArrayList();
     private ArrayList<String> wordListQuant = new ArrayList();

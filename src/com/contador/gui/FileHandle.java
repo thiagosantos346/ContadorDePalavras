@@ -93,7 +93,11 @@ public class FileHandle {
     }
 
     public void clear() {
-        for (int i = 0; i < this.wordList.size(); i++) {
+        
+        wordList.clear();
+        wordListQuant.clear();
+        wordListSplit.clear();
+/*        for (int i = 0; i < this.wordList.size(); i++) {
             this.wordList.remove(i);
 
         }
@@ -107,7 +111,7 @@ public class FileHandle {
             this.wordListSplit.remove(i);
 
         }
-
+*/
         this.numberLines = 0;
         this.numberWords = 0;
         this.numberChars = 0;
@@ -117,6 +121,8 @@ public class FileHandle {
     public int readFile() {
         String line;
         String lineVetor[];
+        
+        clear();
         this.numberChars = 0;
         this.numberWords = 0;
         this.numberLines = 0;

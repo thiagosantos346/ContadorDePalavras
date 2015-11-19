@@ -19,10 +19,16 @@ public class ManipuladorPalavras {
     public Modelo getFormulario() {
         return formulario;
     }
+    
+    public void clearAll()
+    {
+        
+    }
 
     public void run(String[] param) {
 
         formulario.clear();
+        
         SelecionarPalavras run = new SelecionarPalavras();
         int t = param.length;
         String[] listaPalavras = param;

@@ -23,17 +23,22 @@ public class SelecionarPalavras {
             
             for (int j = 0; j < arrayWords.length; j++) {
                 
-                if(arrayWords[i].equals(null) == false)
-                {
-                    if( arrayWords[i].equals(arrayWords[j]) == true  && palavraUnica.contains(arrayWords[j]) == false )
+                try{
+                    if(arrayWords[i].equals(null) == false)
                     {
+                        if( arrayWords[i].equals(arrayWords[j]) == true  && palavraUnica.contains(arrayWords[j]) == false )
+                        {
 
-                        palavraUnica.add(arrayWords[i]);
-                        achou = true;
+                            palavraUnica.add(arrayWords[i]);
+                            achou = true;
 
 
 
+                        }
                     }
+                }catch(NullPointerException e)
+                {
+                    
                 }
             }
 

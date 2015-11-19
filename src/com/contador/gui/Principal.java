@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
  *
  */
 import com.zero.ManipuladorPalavras;
+import java.util.ArrayList;
 //import java.io.IOException;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
@@ -292,6 +293,7 @@ public class Principal extends javax.swing.JFrame {
             //classe responsavel por traser o array a ser inserido na jtable
 
             // Definindo o caminho do arquivo, lipando memorias por fim lendo o arquivo de texto
+
             contar.setPathFile(txtFieldFile.getText());
             contar.clear();
             contar.readFile();
@@ -301,7 +303,7 @@ public class Principal extends javax.swing.JFrame {
             // Linhas, caracteres e palavras to arquivo
             Integer lines = contar.getNumberLines();
             Integer chars = contar.getNumberChars();
-            Integer words = contar.getNumberWords();
+            Integer words = contar.getNumberWords()-1;
 
             // mostando os valores
             this.txtViewWords.setText(words.toString());

@@ -276,6 +276,7 @@ public class Principal extends javax.swing.JFrame {
 
         setLocation = fileExtention.search();
         txtFieldFile.setText(setLocation);
+        
 
     }//GEN-LAST:event_btnSearchActionPerformed
 
@@ -330,8 +331,11 @@ public class Principal extends javax.swing.JFrame {
             //fim
 
             //criando o array que sera povoado com o palavras repetidas e suas frequencias para colocar na jtabela
+            
+            
+            
             String[][] fullArray = new String[palavras.getFormulario().getSize()][2];
-
+            
             //povoando o array
             for (int y = 0; y < palavras.getFormulario().getSize(); y++){
 
@@ -367,12 +371,7 @@ public class Principal extends javax.swing.JFrame {
                 }
             });
 
-            TableModel model = this.jtFrequencia.getModel();
-
-            //final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
-            TableRowSorter<TableModel> sorter = new TableRowSorter<>(model);
-            this.jtFrequencia.setRowSorter(sorter);
-            this.jtFrequencia.setAutoCreateRowSorter(true);
+            
             jScrollPane1.setViewportView(jtFrequencia);
             this.jtFrequencia.setVisible(true);
 

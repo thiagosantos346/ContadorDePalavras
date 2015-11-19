@@ -12,7 +12,6 @@ import java.util.ArrayList;
  *
  * @author thiag
  */
-
 public class ManipuladorPalavras {
 
     private Modelo formulario = new Modelo();
@@ -26,7 +25,6 @@ public class ManipuladorPalavras {
         formulario.clear();
         SelecionarPalavras run = new SelecionarPalavras();
         int t = param.length;
-        int i, j, l;
         String[] listaPalavras = param;
 
         String[] novaListaPalavras = new String[t];
@@ -36,49 +34,28 @@ public class ManipuladorPalavras {
         Integer[] quantidadeItemPalvra = new Integer[t];
 
         newArray = run.runN(param);
-        
-        for (int a = 0; a < newArray.size(); a++) {
-            int add = 0;
-            for (int b = 0; b < listaPalavras.length; b++) {
+        int size = newArray.size();
 
-                try {
-                    if (newArray.get(a).equals(listaPalavras[b]) == true) {
+        for (int j = 0; j < size; j++) {
 
-                        //quantidadeItemPalvra[a]++;
-                        //newArrayId.add(add++);
-                       // newArrayId.add(add++, a );
-                        add++;
+            int cont = 0;
 
-                    }
-                } catch (NullPointerException e) {
-                    System.out.print(e.getMessage());
+            for (int x = 0; x < param.length; x++) {
+                
+                if(newArray.get(j).equals(param[x]))
+                {
+                    cont++;
+                    newArrayId.add(j, cont);
                 }
                 
-                if(a == (newArray.size()) - 1)
-                {
-                    newArrayId.add(add);
-                }
             }
-
         }
-
-        for (int n = 0; n < newArrayId.size()-1; n++) {
-            try {
-
-                //tabela.add(newArray.get(n-1));
-                //quantidade.add(newArrayId.get(n-1).toString());
-
-                formulario.setPalavra(newArray.get(n));
-                formulario.setQuantidade(newArrayId.get(n));
-
-            } catch (NullPointerException e) {
-
-                System.out.printf(e.getMessage());
-
-            }
-
+        
+        for(int i = 0; i < newArray.size(); i++ )
+        {
+            formulario.setPalavra(newArray.get(i));
+            formulario.setQuantidade(newArrayId.get(i));
         }
-
     }
 
 }

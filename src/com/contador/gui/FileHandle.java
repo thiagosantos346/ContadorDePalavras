@@ -137,7 +137,7 @@ public class FileHandle {
                 this.numberLines++;
 
                 //dividindo uma string em sub strings
-                lineVetor = line.split("\\W");
+                lineVetor = line.split("\\p{Space}");
 
                 this.numberWords += lineVetor.length;
 

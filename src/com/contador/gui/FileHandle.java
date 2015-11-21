@@ -35,7 +35,7 @@ public class FileHandle {
 
     FileHandle() {
 
-        this.charset = StandardCharsets.UTF_8;
+        this.charset = StandardCharsets.ISO_8859_1;
 
     }
 
@@ -160,8 +160,9 @@ public class FileHandle {
             reader.close();
 
         } catch (IOException e) {
-
-            JOptionPane.showMessageDialog(null, "\n Erro: " + e.toString());
+            
+            this.setCharset(12);
+            JOptionPane.showMessageDialog(null, "\n Erro: " + e.toString()+" CharSet Trocado Para Utf-8 Tente Abrir o Arquivo Novamente ");
         }
         return 100;
     }
